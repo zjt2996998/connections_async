@@ -50,7 +50,7 @@ Requests/sec:    192.46
 Transfer/sec:     90.59KB
 ```
 
--Quart ASGI
+- Quart ASGI
 
 ```
 wrk -t10 -c1000 -d10s --latency "http://127.0.0.1:5000/people"   dylan@DESKTOP-R64EE08
@@ -69,6 +69,3 @@ Running 10s test @ http://127.0.0.1:5000/people
 Requests/sec:    490.08
 Transfer/sec:    230.90KB
 ```
-
-
-
