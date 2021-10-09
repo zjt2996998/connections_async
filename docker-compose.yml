@@ -1,0 +1,41 @@
+version: '3.7'
+
+services:
+  web:
+    build: ./
+    command: hypercorn --bind 0.0.0.0:5000 manage:app
+    stdin_open: true
+    tty: true 
+    volumes:
+      - ./:/app
+    ports:
+      - 5000:5000
+    env_file:
+      - ./env/.dev
+    expose:
+      - "5000"
+    depends_on:
+      - db
+  nginx:
+    image: nginx:stable-alpine
+    container_name: nginx_connections
+    volumes:
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+    ports:
+      - "1377:80"
+    depends_on:
+      - web
+  db:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=very_secure_password
+      - MYSQL_DATABASE=dash_hudson_dev
+    volumes:
+      - my-db:/var/lib/mysql
+    expose:
+      - 3306
+    ports:
+      - 3307:3306
+    
+volumes:
+  my-db:

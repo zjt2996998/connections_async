@@ -1,0 +1,6 @@
+QUART_APP=connections_async/app.py
+QUART_ENV=development
+DATABASE_URL=mysql://root:very_secure_password@db:3306/dash_hudson_dev
+SQL_HOST=db
+SQL_PORT=3306
+DATABASE=mysql

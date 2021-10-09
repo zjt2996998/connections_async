@@ -1,0 +1,7 @@
+quart==0.15.1
+tortoise-orm[aiomysql]
+cryptography==35.0.0
+aerich==0.5.8
+marshmallow-enum==1.4.1
+marshmallow==2.20.0
+webargs==5.4.0
