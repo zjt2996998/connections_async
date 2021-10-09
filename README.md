@@ -37,17 +37,17 @@ wrk -t10 -c1000 -d10s --latency "http://127.0.0.1:5000/people"   dylan@DESKTOP-R
 Running 10s test @ http://127.0.0.1:5000/people
   10 threads and 1000 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency   260.96ms  520.07ms   1.99s    86.75%
-    Req/Sec    62.82     58.57   424.00     83.31%
+    Latency     1.88s     0.00us   1.88s   100.00%
+    Req/Sec    54.76     58.83   320.00     85.99%
   Latency Distribution
-     50%   54.57ms
-     75%   76.29ms
-     90%    1.28s
+     50%    1.88s
+     75%    1.88s
+     90%    1.88s
      99%    1.88s
-  4660 requests in 10.03s, 2.14MB read
-  Socket errors: connect 0, read 0, write 0, timeout 878
-Requests/sec:    464.68
-Transfer/sec:    218.88KB
+  1929 requests in 10.02s, 0.89MB read
+  Socket errors: connect 0, read 0, write 0, timeout 1928
+Requests/sec:    192.46
+Transfer/sec:     90.59KB
 ```
 
 -Quart ASGI
